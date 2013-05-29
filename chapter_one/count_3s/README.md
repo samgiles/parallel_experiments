@@ -38,7 +38,7 @@ As expected a single thread is comparable to the iterative solution.  However, i
 
 `make threadv2 && ./threadv2`
 
-This version is almost identica to the Thread V1 implementation however it is capable of being more performant than the iterative implementation.  To avoid lock contention every time the thread finds a _3_ we simply keep a local count of threes (local from the thread and the codes point of view) and update the outer value once the loop has completed.
+This version is almost identical to the Thread V1 implementation however it is capable of being more performant than the iterative implementation.  To avoid lock contention every time the thread finds a _3_ we simply keep a local count of threes (local from the thread and the code's point of view) and update the outer value once the loop has completed.
 
 **1** Threads: Averages **1.144s** where `n = 100000000`
 
