@@ -33,3 +33,15 @@ The version one of the threaded implementation attempts to demonstrate performan
 **4** Threads:  Averages **7.403s** where `_n_ = 100000000`
 
 As expected a single thread is comparable to the iterative solution.  However, increasing the number of threads degrades performance.  This is due to the fact that a thread blocks while waiting to update the count.  If all threads are consistently waiting for the lock to be freed, we can expect threads to be waiting for each other rather than working.
+
+## Thread V2
+
+`make threadv2 && ./threadv2`
+
+This version is almost identica to the Thread V1 implementation however it is capable of being more performant than the iterative implementation.  To avoid lock contention every time the thread finds a _3_ we simply keep a local count of threes (local from the thread and the codes point of view) and update the outer value once the loop has completed.
+
+**1** Threads: Averages **1.144s** where `n = 100000000`
+
+**2** Threads: Averages **1.024s** where `n = 100000000`
+
+**4** Threads: Averages **0.990s** where `n = 100000000`
