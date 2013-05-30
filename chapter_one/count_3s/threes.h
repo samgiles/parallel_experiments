@@ -19,7 +19,8 @@ array_t* create_array(int length, int upperbound) {
         value->values = (int*)calloc(length, sizeof(int));
         value->length = length;
 
-        for(int i = 0; i < length; ++i) {
+        int i;
+        for(i = 0; i < length; ++i) {
                 value->values[i] = rand() % upperbound;
         }
 
