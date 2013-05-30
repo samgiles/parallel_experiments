@@ -15,7 +15,7 @@ struct count_args {
 
 int main(int argc, char* argv[]) {
         count = 0;
-        int threadCount = 1;
+        int threadCount = 4;
 
         pthread_t* threads = malloc(sizeof(pthread_t) * threadCount);
         pthread_mutex_init(&m, NULL);
